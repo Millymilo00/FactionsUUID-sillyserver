@@ -12,6 +12,8 @@ import com.massivecraft.factions.cmd.claim.CmdUnclaim;
 import com.massivecraft.factions.cmd.claim.CmdUnclaimall;
 import com.massivecraft.factions.cmd.claim.CmdUnclaimfill;
 import com.massivecraft.factions.cmd.claim.CmdWarunclaimall;
+import com.massivecraft.factions.cmd.dtr.CmdDTRModify;
+import com.massivecraft.factions.cmd.dtr.CmdDTRResetAll;
 import com.massivecraft.factions.cmd.money.CmdMoney;
 import com.massivecraft.factions.cmd.relations.CmdRelationAlly;
 import com.massivecraft.factions.cmd.relations.CmdRelationEnemy;
@@ -80,6 +82,8 @@ public class FCmdRoot extends FCommand implements CommandExecutor {
     public final CmdPowerBoost cmdPowerBoost = new CmdPowerBoost();
     public final CmdPower cmdPower = new CmdPower();
     public final CmdDTR cmdDTR = new CmdDTR();
+    public final CmdDTRModify cmdDTRModify = new CmdDTRModify();
+    public final CmdDTRResetAll cmdDTRResetAll = new CmdDTRResetAll();
     public final CmdRelationAlly cmdRelationAlly = new CmdRelationAlly();
     public final CmdRelationEnemy cmdRelationEnemy = new CmdRelationEnemy();
     public final CmdRelationNeutral cmdRelationNeutral = new CmdRelationNeutral();
@@ -229,6 +233,8 @@ public class FCmdRoot extends FCommand implements CommandExecutor {
         } else if (FactionsPlugin.getInstance().getLandRaidControl() instanceof DTRControl) {
             FactionsPlugin.getInstance().getLogger().info("Using DTR for land/raid control. Enabling DTR commands.");
             this.addSubCommand(this.cmdDTR);
+            this.addSubCommand(this.cmdDTRModify);
+            this.addSubCommand(this.cmdDTRResetAll);
         }
         if (FactionsPlugin.getInstance().conf().commands().tnt().isEnable()) {
             this.addSubCommand(this.cmdTNT);
