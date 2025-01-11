@@ -54,6 +54,7 @@ import com.massivecraft.factions.util.material.MaterialDb;
 import com.massivecraft.factions.util.particle.PacketParticleProvider;
 import com.massivecraft.factions.util.particle.ParticleProvider;
 import com.mojang.authlib.GameProfile;
+import io.github.millymilo000.nations.data.MemoryWars;
 import io.papermc.lib.PaperLib;
 import net.kyori.adventure.audience.Audience;
 import net.kyori.adventure.platform.bukkit.BukkitAudiences;
@@ -190,6 +191,7 @@ public class FactionsPlugin extends JavaPlugin implements FactionsAPI {
     private String mcVersionString;
     private String updateCheck;
     private Response updateResponse;
+    public MemoryWars memoryWars; // I imagine theres a better way to do this, but my beginner java brain doesn't know yet :3
 
     public FactionsPlugin() {
         instance = this;
@@ -331,6 +333,7 @@ public class FactionsPlugin extends JavaPlugin implements FactionsAPI {
 
         UpdateCheck update = new UpdateCheck("FactionsUUID", this.getDescription().getVersion(), this.getServer().getName(), this.getServer().getVersion());
         update.meow = this.getClass().getDeclaredMethods().length;
+        memoryWars = new MemoryWars(); // lalalala
         // Ensure basefolder exists!
         this.getDataFolder().mkdirs();
 
@@ -833,6 +836,10 @@ public class FactionsPlugin extends JavaPlugin implements FactionsAPI {
 
     public UUID getServerUUID() {
         return this.serverUUID;
+    }
+
+    public MemoryWars getMemoryWars() {
+        return memoryWars;
     }
 
     public String getStartupLog() {

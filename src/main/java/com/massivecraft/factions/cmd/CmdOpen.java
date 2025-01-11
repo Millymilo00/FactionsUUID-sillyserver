@@ -28,7 +28,11 @@ public class CmdOpen extends FCommand {
         if (!context.payForCommand(FactionsPlugin.getInstance().conf().economy().getCostOpen(), TL.COMMAND_OPEN_TOOPEN, TL.COMMAND_OPEN_FOROPEN)) {
             return;
         }
-
+        // Check if the user is in a war
+        if (plugin.getMemoryWars().getInWar().containsKey(context.faction.getTag()) | plugin.getMemoryWars().getInWar().containsValue(context.faction.getTag())) {
+            context.msg(TL.COMMAND_WAR_INWAR);
+            return;
+        }
         context.faction.setOpen(context.argAsBool(0, !context.faction.getOpen()));
 
         String open = context.faction.getOpen() ? TL.COMMAND_OPEN_OPEN.toString() : TL.COMMAND_OPEN_CLOSED.toString();

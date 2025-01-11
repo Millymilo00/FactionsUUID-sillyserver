@@ -2,6 +2,12 @@
   <a href="https://www.spigotmc.org/resources/factionsuuid.1035/"><img src="https://i.imgur.com/3PCF7tz.png"></a>
 </center>
 
+# hello, welcome to my fork
+hi, this is just a little fork of FactionsUUID's 1.8 branch, that I use on my Nations server with my own poorly coded silly modifications to it. 
+I am not an original developer for this plugin, so please don't try to contact me about getting the plugin for free. All credit for the original code goes to the original developers.
+
+# original readme:
+ 
 # WARNING
 
 ## This branch is for a legacy version of the plugin for MC 1.8.8

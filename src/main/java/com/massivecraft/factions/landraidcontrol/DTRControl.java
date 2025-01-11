@@ -1,10 +1,6 @@
 package com.massivecraft.factions.landraidcontrol;
 
-import com.massivecraft.factions.Board;
-import com.massivecraft.factions.FPlayer;
-import com.massivecraft.factions.FPlayers;
-import com.massivecraft.factions.Faction;
-import com.massivecraft.factions.FactionsPlugin;
+import com.massivecraft.factions.*;
 import com.massivecraft.factions.cmd.CommandContext;
 import com.massivecraft.factions.config.file.MainConfig;
 import com.massivecraft.factions.event.DTRLossEvent;
@@ -185,6 +181,11 @@ public class DTRControl implements LandRaidControl {
         boolean raidEnd = this.isRaidable(faction, end);
         if (raidEnd && !raidStart) {
             this.announceRaidable(faction);
+            //this happens once when dtr is 0 or below
+            Faction opFaction = plugin.getMemoryWars().getOpposingFactionInWar(faction.getTag());
+            if (opFaction!=null) {
+                opFaction.msg(TL.DTR_WAR);
+            }
         } else if (raidStart && !raidEnd) {
             this.announceNotRaidable(faction);
         }

@@ -24,6 +24,7 @@ import com.massivecraft.factions.cmd.role.CmdPromote;
 import com.massivecraft.factions.landraidcontrol.DTRControl;
 import com.massivecraft.factions.landraidcontrol.PowerControl;
 import com.massivecraft.factions.util.TL;
+import io.github.millymilo000.nations.cmd.war.*;
 import io.papermc.lib.PaperLib;
 import me.lucko.commodore.CommodoreProvider;
 import org.bukkit.Bukkit;
@@ -133,6 +134,14 @@ public class FCmdRoot extends FCommand implements CommandExecutor {
     public final CmdTicketInfo cmdTicketInfo = new CmdTicketInfo();
     public final CmdTNT cmdTNT = new CmdTNT();
     public final CmdListClaims cmdListClaims = new CmdListClaims();
+    public final CmdPlanWar cmdPlanWar = new CmdPlanWar();
+    public final CmdLetWar cmdLetWar = new CmdLetWar();
+    public final CmdAcceptWar cmdAcceptWar = new CmdAcceptWar();
+    public final CmdCancelPlan cmdCancelPlan = new CmdCancelPlan();
+    public final CmdListWars cmdListWars = new CmdListWars();
+    public final CmdNagWar cmdNagWar = new CmdNagWar();
+    public final CmdStartWar cmdStartWar = new CmdStartWar();
+    public final CmdEndWar cmdEndWar = new CmdEndWar();
 
     public FCmdRoot() {
         super();
@@ -181,7 +190,7 @@ public class FCmdRoot extends FCommand implements CommandExecutor {
         this.addSubCommand(this.cmdPeaceful);
         this.addSubCommand(this.cmdPermanent);
         this.addSubCommand(this.cmdRelationAlly);
-        this.addSubCommand(this.cmdRelationEnemy);
+        //this.addSubCommand(this.cmdRelationEnemy); The whole war system controls a factions enemies now so this command won't be used.
         this.addSubCommand(this.cmdRelationNeutral);
         this.addSubCommand(this.cmdRelationTruce);
         this.addSubCommand(this.cmdReload);
@@ -224,6 +233,14 @@ public class FCmdRoot extends FCommand implements CommandExecutor {
         this.addSubCommand(this.cmdNear);
         this.addSubCommand(this.cmdTicketInfo);
         this.addSubCommand(this.cmdListClaims);
+        this.addSubCommand(this.cmdPlanWar);
+        this.addSubCommand(this.cmdLetWar);
+        this.addSubCommand(this.cmdAcceptWar);
+        this.addSubCommand(this.cmdCancelPlan);
+        this.addSubCommand(this.cmdListWars);
+        this.addSubCommand(this.cmdNagWar);
+        this.addSubCommand(this.cmdStartWar);
+        this.addSubCommand(this.cmdEndWar);
         if (FactionsPlugin.getInstance().getLandRaidControl() instanceof PowerControl) {
             FactionsPlugin.getInstance().getLogger().info("Using POWER for land/raid control. Enabling power commands.");
             this.addSubCommand(this.cmdPermanentPower);

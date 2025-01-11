@@ -34,6 +34,13 @@ public abstract class FRelationCommand extends FCommand {
     @Override
     public void perform(CommandContext context) {
         Faction them = context.argAsFaction(0);
+
+        //If the user is in a war cancel this command
+        if (plugin.getMemoryWars().getInWar().containsKey(context.faction.getTag()) | plugin.getMemoryWars().getInWar().containsValue(context.faction.getTag())) {
+            context.msg(TL.COMMAND_WAR_INWAR);
+            return;
+        }
+
         if (them == null) {
             return;
         }

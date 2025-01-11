@@ -115,7 +115,12 @@ public enum Permission {
     WARP("warp"),
     UPDATES("updates"),
     DEBUG("debug"),
-    WARMUP_EXEMPT("warmups.exempt");
+    WARMUP_EXEMPT("warmups.exempt"),
+    WAR("war"),
+    LET_WAR("letwar"),
+    WAR_LIST("war.list"),
+    WAR_NAG("war.nag"),
+    ;
 
     public final String node;
 

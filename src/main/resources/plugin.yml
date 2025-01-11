@@ -41,6 +41,7 @@ permissions:
       factions.join.others: true
       factions.admin.any: true
       factions.mod.any: true
+      factions.war.letwar: true
   factions.kit.halfmod:
     description: Zones, bypassing, kicking, and chatspy
     children:
@@ -113,6 +114,9 @@ permissions:
       factions.coleader: true
       factions.near: true
       factions.permissions: true
+      factions.war: true
+      factions.war.nag: true
+      factions.war.list: true
   factions.admin:
     description: hand over your admin rights
   factions.admin.any:
@@ -332,3 +336,7 @@ permissions:
     description: List claims
   factions.listclaims.other:
     description: List claims of other factions
+  factions.war:
+    description: War commands used by a faction to plan, accept, and start a war
+  faction.war.letwar:
+    description: Admin commands for war stuff, just the let war command.

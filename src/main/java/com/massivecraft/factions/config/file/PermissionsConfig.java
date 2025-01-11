@@ -70,6 +70,7 @@ public class PermissionsConfig {
         this.defaultPermissions.put(new RoleAtLeastSelector(Role.COLEADER).serialize(), ImmutableMap.<String, Boolean>builder()
                 .put(PermissibleActions.SETHOME.name(), true)
                 .put(PermissibleActions.ECONOMY.name(), true)
+                .put(PermissibleActions.WAR.name(), true)
                 .build());
 
         this.defaultPermissionsOrder.add(new RoleAtLeastSelector(Role.MODERATOR).serialize());
@@ -99,6 +100,8 @@ public class PermissionsConfig {
                 .put(PermissibleActions.PLATE.name(), true)
                 .put(PermissibleActions.TNTDEPOSIT.name(), true)
                 .put(PermissibleActions.WARP.name(), true)
+                .put(PermissibleActions.WAR_LIST.name(), true)
+                .put(PermissibleActions.WAR_NAG.name(), true)
                 .build());
 
         this.defaultPermissionsOrder.add(new RelationAtLeastSelector(Relation.ALLY).serialize());

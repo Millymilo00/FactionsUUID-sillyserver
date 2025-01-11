@@ -683,6 +683,56 @@ public enum TL {
     COMMAND_WARUNCLAIMALL_SUCCESS("&eYou unclaimed ALL war zone land."),
     COMMAND_WARUNCLAIMALL_LOG("%1$s unclaimed all war zones."),
 
+    COMMAND_WAR_NOTINANY("&cYour faction isn't in a war with that faction!"),
+
+    COMMAND_WAR_ID_NOT("&cThat's not a valid ID!"),
+    COMMAND_WAR_ID_INVALID("&cThat ID is less than 0 or too large!"),
+
+    COMMAND_WAR_CANGRIEF_DEFFAC("&cDefending factions can't decide whether or not a plan allows griefing, ignoring."),
+    COMMAND_WAR_CANGRIEF_EMPTYAT("&cAttacking factions have to choose &btrue&c or &bfalse&c on whether a grief is allowed in a war plan!"),
+    COMMAND_WAR_CANGRIEF_UNRECOGNIZED("&cYour can grief response was not recognized, &ePlease use &btrue&e, or &bfalse&e."),
+
+    COMMAND_WAR_ACCEPT_ALREADY("&cYou already agreed to this plan!"),
+    COMMAND_WAR_ACCEPT_SWITCH("&eBut we can switch the allow griefing to whatever you input."),
+    COMMAND_WAR_ACCEPT_SUCCESS("&eSuccessfully accepted war plan!"),
+    COMMAND_WAR_ACCEPT_BOTHAGREE_PLR("&eBoth factions agree to this plan! When this time comes, you must start the war"),
+    COMMAND_WAR_ACCEPT_BOTHAGREE_THEM("&eA war plan has been accepted by both factions. Check the plans to see the agreed time."),
+
+    COMMAND_WAR_CANCEL_ALREADY("&cYou already don't agree with this plan!"),
+    COMMAND_WAR_CANCEL_SUCCESS_ONE("&eSuccessfully removed your agree on this plan."),
+    COMMAND_WAR_CANCEL_SUCCESS_DELETE("&eBoth factions disagree with plan &6%d&e, removing plan."),
+    COMMAND_WAR_CANCEL_SUCCESS_BOTHAGREE("&c!! &eKnow this plan still can be used unless the other faction also cancels this plan."),
+
+    COMMAND_WAR_LETWAR_THEM_ATTACKING("&eYou now have a war on &6%s."),
+    COMMAND_WAR_LETWAR_THEM_DEFENDING("&6%s &ehas just declared war on your nation."),
+    COMMAND_WAR_LETWAR_THEM_BASIC("&ePlan this war with &b/f war&e, look at plans with &b/f listwars&e, and accept a war with &b/f acceptwar&e."),
+
+    COMMAND_WAR_LIST_PLANS("&ePlans:"),
+    COMMAND_WAR_LIST_NONE("&eNo plans"),
+    COMMAND_WAR_LIST_GRIEF_UNDECIDED("Griefing Undecided"),
+    COMMAND_WAR_LIST_GRIEF_NONE("No Griefing"),
+    COMMAND_WAR_LIST_GRIEF_ALLOWED("Griefing Allowed"),
+    COMMAND_WAR_LIST_BOTHAGREED("BOTH AGREED!"),
+    COMMAND_WAR_LIST_TITLE_1("&eThe war between &4%s&e and &d%s"),
+    COMMAND_WAR_LIST_TITLE_2("&eAccepted at &6%s"),
+
+    COMMAND_WAR_NAG_SUCCESS("&eSuccessfully made nag"),
+    COMMAND_WAR_NAG_NAG("&eplan or accept a war plan with &6%s &epls"),
+
+    COMMAND_WAR_PLAN_TIME_1("&cMonth, day or hour value is invalid. &eIf you wanted to start a war with RED on December 5th, at 3:30 PM, and allow griefing, you would do"),
+    COMMAND_WAR_PLAN_TIME_2("&b/f war RED 12 5 15 30 true"),
+    COMMAND_WAR_PLAN_PAST("&cYou can't plan a war for the past!"),
+    COMMAND_WAR_PLAN_SUCCESS("&eSuccessfully created war plan"),
+    COMMAND_WAR_PLAN_THEM("&6%s &eMade a new war plan."),
+
+    COMMAND_WAR_START_FAIL("&cNo agreed plans say a war can start right now!"),
+
+    COMMAND_WAR_END_PARAM("&cUnrecognized option. &eIf you're surrendering do &b/f endwar surrender&e. If you're ending the war because the other side's DTR is 0 then only do &b/f endwar&e don't include any options."),
+    COMMAND_WAR_END_DTR_NOT0("&cThe other faction doesn't have 0 DTR! &eIf you meant to surrender do &b/f endwar surrender"),
+    COMMAND_WAR_END_DTR_NOT75("&cYou need to have 75% DTR or &b%d&c DTR to surrender!"),
+
+    COMMAND_WAR_INWAR("&cYou cannot use this command while in a war!"),
+    COMMAND_WAR_NOT("&cYou have to be currently started war to use this!"),
 
     /**
      * Leaving - This is accessed through a command, and so it MAY need a COMMAND_* slug :s
@@ -916,6 +966,9 @@ public enum TL {
     PERM_WARP("Using faction warps"),
     PERM_FLY("Flying in faction territory"),
     PERM_OWNER("Set ownership of land using /f owner in faction territory"),
+    PERM_WAR("Plan a war against another faction"),
+    PERM_WAR_LIST("List war plans"),
+    PERM_WAR_NAG("Nag the opposing faction about a war plan"),
 
     PERM_SHORT_BUILD("build"),
     PERM_SHORT_DESTROY("destroy"),
@@ -943,6 +996,9 @@ public enum TL {
     PERM_SHORT_WARP("use warps"),
     PERM_SHORT_FLY("fly"),
     PERM_SHORT_OWNER("set ownership"),
+    PERM_SHORT_WAR("plan wars"),
+    PERM_SHORT_WAR_LIST("list plans"),
+    PERM_SHORT_WAR_NAG("nag"),
 
     PERM_DENIED_WILDERNESS("&cYou can't %s in the wilderness"),
     PERM_DENIED_SAFEZONE("&c>You can't %s in a safe zone"),
@@ -1024,6 +1080,7 @@ public enum TL {
     DTR_FROZEN_TIME_MESSAGE("%s"),
     DTR_FROZEN_TIME_NOTFROZEN(""),
     DTR_VAMPIRISM_GAIN("&eStole &d%.2f&e DTR from %s&e. Your DTR is now &d%d"),
+    DTR_WAR("&eThe enemy's DTR is now 0, you can end the war with &b/f endwar"),
 
     RAIDABLE_NOWRAIDABLE("%s &cis now raidable!"),
     RAIDABLE_NOLONGERRAIDABLE("%s &cis no longer raidable!"),
